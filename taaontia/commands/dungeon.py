@@ -1,5 +1,5 @@
-from registry import CommandsRegistry, commands
-from command import Command
+from .registry import CommandsRegistry, commands
+from .command import Command
 
 
 @commands.register

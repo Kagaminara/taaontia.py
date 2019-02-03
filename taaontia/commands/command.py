@@ -1,4 +1,4 @@
-from registry import CommandsRegistry
+from .registry import CommandsRegistry
 
 
 class Command:

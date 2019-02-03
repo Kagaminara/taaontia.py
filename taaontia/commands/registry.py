@@ -7,11 +7,11 @@ class CommandsRegistry:
         return command
 
     def get(self, command):
-        from helper import HelpCommand
+        from .helper import HelpCommand
 
         return self.commands.get(command, HelpCommand())
 
 
 commands = CommandsRegistry()
 
-import helper, success, fail, travel, dungeon
+from . import helper, success, fail, travel, dungeon
