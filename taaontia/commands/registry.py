@@ -13,5 +13,3 @@ class CommandsRegistry:
 
 
 commands = CommandsRegistry()
-
-from . import helper, success, fail, travel, dungeon
