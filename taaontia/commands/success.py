@@ -7,5 +7,5 @@ class SuccessCommand(Command):
     helper = "Try something."
     trigger = "succeed"
 
-    def run(self, message):
+    def run(self, taaontia_instance, message):
         return "You successfully failed"

@@ -7,7 +7,7 @@ class HelpCommand(Command):
     helper = "Show this help."
     trigger = "help"
 
-    def run(self, message):
+    def run(self, taaontia_instance, message):
         if message:
             return commands.get(message).helper
         ret = "```"

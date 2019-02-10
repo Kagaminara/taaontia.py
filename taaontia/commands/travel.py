@@ -7,6 +7,6 @@ class TravelCommand(Command):
     helper = "Try to move a bit ."
     trigger = "travel"
 
-    def run(self, message):
+    def run(self, taaontia_instance, message):
         return "You travel a bit to try to change your peevish, poor life. You failed."
 

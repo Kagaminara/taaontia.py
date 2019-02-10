@@ -7,6 +7,6 @@ class FailCommand(Command):
     helper = "Try something."
     trigger = "fail"
 
-    def run(self, message):
+    def run(self, taaontia_instance, message):
         return "You tried something. You failed"
 
