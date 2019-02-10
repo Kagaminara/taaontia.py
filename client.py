@@ -1,7 +1,12 @@
 from taaontia.commands.registry import commands
+from taaontia.core import Taaontia
 
 
 def test():
+
+    taaontia = Taaontia()
+    taaontia.init(db_path=None)
+
     try:
         while True:
             rawcommand = input("> Type in a command:\n> ")
@@ -10,7 +15,7 @@ def test():
             parsed_message = rawcommand.split(" ", 2)
             print(
                 commands.get(parsed_message[0])(
-                    parsed_message[1] if len(parsed_message) > 1 else None
+                    taaontia, parsed_message[1] if len(parsed_message) > 1 else None
                 )
             )
     except (EOFError, KeyboardInterrupt):
