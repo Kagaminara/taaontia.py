@@ -3,8 +3,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
+Session = None
+userId = None
 
-from models import user
+from .models import user, statistics
 
 
 def init(db_path="taaontia.db", debug=False):
