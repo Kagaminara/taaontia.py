@@ -3,17 +3,32 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
-Session = None
-userId = None
 
 from .models import user, statistics
 
 
-def init(db_path="taaontia.db", debug=False):
-    engine = sqlalchemy.create_engine(
-        f"sqlite:///{db_path}" if db_path else "sqlite://", echo=debug
-    )
-    Session = sessionmaker()
-    Session.configure(bind=engine)
-    Base.metadata.create_all(engine)
-    return Session
+class Taaontia:
+    engine = None
+
+    __Session = None
+
+    def get_new_session(self):
+        return self.__Session() if self.__Session else None
+
+    def init(self, db_path="sqlite:///taaontia.db", debug=False):
+        self.engine = sqlalchemy.create_engine(
+            f"{db_path}" if db_path else "sqlite://", echo=debug
+        )
+        self.__Session = sessionmaker()
+        self.__Session.configure(bind=self.engine)
+        Base.metadata.create_all(self.engine)
+        return self.__Session
+
+    def close(self, parameter_list):
+        if self.engine:
+            self.engine.dispose()
+        pass
+
+    def __repr__(self):
+        return f"<Taaontia(connected={True if self.engine else False})>"
+
