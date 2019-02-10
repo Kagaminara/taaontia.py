@@ -8,7 +8,7 @@ class Statistics(Base):
     __tablename__ = "statistics"
 
     id = Column(Integer, primary_key=True)
-    command_count = Column(Integer)
+    command_count = Column(Integer, default=0)
 
     user_id = Column(Integer, ForeignKey("user.id"))
     user = relationship("User", back_populates="statistics")
