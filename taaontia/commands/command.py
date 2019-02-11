@@ -24,7 +24,7 @@ class Command:
         pass
 
     def __call__(self, taaontia_instance, message):
-        if taaontia_instance:
+        if taaontia_instance.is_initialized():
             increment_command_count(taaontia_instance)
 
         try:

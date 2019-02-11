@@ -9,11 +9,9 @@ class StatisticsCommand(Command):
     trigger = "statistics"
 
     def run(self, taaontia_instance, message):
-        if not taaontia_instance:
+        if not taaontia_instance.is_initialized():
             raise TaaontiaNotInitializedException
         session = taaontia_instance.get_new_session()
-        if not session:
-            raise TaaontiaNotInitializedException
 
         from taaontia.models.user import User
 

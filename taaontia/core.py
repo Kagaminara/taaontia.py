@@ -12,6 +12,9 @@ class Taaontia:
 
     __Session = None
 
+    def is_initialized(self):
+        return self.engine is not None
+
     def get_new_session(self):
         return self.__Session() if self.__Session else None
 
