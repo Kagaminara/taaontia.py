@@ -4,4 +4,8 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
+marshmallow==2.18.0
+passlib==1.7.1
+six==1.12.0               # via sqlalchemy-utils
+sqlalchemy-utils==0.33.11
 sqlalchemy==1.2.17

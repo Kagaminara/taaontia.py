@@ -1,1 +1,4 @@
 sqlalchemy
+sqlalchemy-utils
+passlib
+marshmallow
