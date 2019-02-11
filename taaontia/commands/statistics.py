@@ -16,7 +16,7 @@ class StatisticsCommand(Command):
         from taaontia.models.user import User
 
         user = session.query(User).first()
-        message = f"Here are your statistics, {message}\n - command count: {user.statistics.command_count}"
+        message = f"Here are your statistics, {user.username}\n - command count: {user.statistics.command_count}"
         session.close()
 
         return message
