@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from taaontia.core import Base
+from taaontia.db.utils import Base
+
 
 class Character(Base):
     __tablename__ = "character"

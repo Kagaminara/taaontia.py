@@ -1,10 +1,7 @@
 import sqlalchemy
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-
-Base = declarative_base()
-
-from .models import user, statistics
+from .db.utils import Base
+from .models import User, Statistics
 
 
 class Taaontia:
