@@ -19,15 +19,13 @@ class Taaontia:
         return self.__Session() if self.__Session else None
 
     def init(self, db_path="sqlite:///taaontia.db", debug=False):
-        self.engine = sqlalchemy.create_engine(
-            f"{db_path}" if db_path else "sqlite://", echo=debug
-        )
+        self.engine = sqlalchemy.create_engine(db_path or "sqlite://", echo=debug)
         self.__Session = sessionmaker()
         self.__Session.configure(bind=self.engine)
         Base.metadata.create_all(self.engine)
         return self.__Session
 
-    def close(self, parameter_list):
+    def close(self):
         if self.engine:
             self.engine.dispose()
         pass

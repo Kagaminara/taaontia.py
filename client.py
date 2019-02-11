@@ -18,11 +18,13 @@ def test():
                     taaontia, parsed_message[1] if len(parsed_message) > 1 else None
                 )
             )
+            print("\n")
     except (EOFError, KeyboardInterrupt):
-        quit_gracefully()
+        quit_gracefully(taaontia)
 
 
-def quit_gracefully():
+def quit_gracefully(taaontia):
+    taaontia.close()
     print("Taking a break from your adventure? Fine...")
     exit()
 
