@@ -2,9 +2,17 @@ class TaaontiaException(Exception):
     pass
 
 
-class NoEngineException(Exception):
+class NoEngineException(TaaontiaException):
     pass
 
 
-class TaaontiaNotInitializedException(Exception):
+class TaaontiaNotInitializedException(TaaontiaException):
+    pass
+
+
+class CommandException(TaaontiaException):
+    pass
+
+
+class CommandNotImplementedException(CommandException):
     pass
